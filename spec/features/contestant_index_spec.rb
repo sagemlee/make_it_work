@@ -25,21 +25,22 @@ require "rails_helper"
       ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
 
       visit "/contestants"
-
-      within("contestant-#{jay.id}") do
-        expect(page).to have_content(jay.projects)
+      within("#contestant-#{jay.id}") do
+        expect(page).to have_content(news_chic.name)
       end
 
-      within("contestant-#{gretchen.id}") do
-        expect(page).to have_content(gretchen.projects)
+      within("#contestant-#{gretchen.id}") do
+        expect(page).to have_content(news_chic.name)
+        expect(page).to have_content(upholstery_tux.name)
       end
 
-      within("contestant-#{kentaro.id}") do
-        expect(page).to have_content(kentaro.projects)
+      within("#contestant-#{kentaro.id}") do
+        expect(page).to have_content(upholstery_tux.name)
+        expect(page).to have_content(boardfit.name)
       end
 
-      within("contestant-#{erin.id}") do
-        expect(page).to have_content(erin.projects)
+      within("#contestant-#{erin.id}") do
+        expect(page).to have_content(boardfit.name)
       end
 
     end
