@@ -1,4 +1,4 @@
-require rails_helper
+require "rails_helper"
 
   describe "when visitor goes to project show page" do
     it "sees project name, material, and theme of project's challege" do
@@ -10,8 +10,8 @@ require rails_helper
 
       visit "/projects/#{news_chic.id}"
 
-      expect(page)to have_content(news_chic.name)
-      expect(page)to have_content(news_chic.material)
-      expect(page)to have_content(recycled_material_challenge.theme)
+      expect(page).to have_content(news_chic.name)
+      expect(page).to have_content(news_chic.material)
+      expect(page).to have_content(recycled_material_challenge.theme)
     end
   end
